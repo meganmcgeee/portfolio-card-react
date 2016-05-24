@@ -1,9 +1,8 @@
-import { Router, browserHistory } from 'react-router';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PortfolioCard from './components/PortfolioCard.jsx';
+import Index from './components/Index';
 
 ReactDOM.render(
-  <PortfolioCard />,
+  <Index />,
   document.getElementById('root')
 );
