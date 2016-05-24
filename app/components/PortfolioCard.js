@@ -1,31 +1,53 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import './PortfolioCard.scss';
 
-const PortfolioCard = ({ imageUrl, text, linkUrl }) => (
-  getInitialState: () => {
-      hover: false
-    },
+class PortfolioCard extends Component {
+  state = {
+    hover: false,
+  };
 
-  mouseOver: () => {
+  mouseOver = () => {
     this.setState({
-      hover: true
-      text: "I flipped"
+      hover: true,
     });
-  },
+  }
 
-  mouseOut: () => {
+  mouseOut = () => {
     this.setState({
-      hover:false
-      text: "I unflipped"
+      hover: false,
     });
-  },
-  <div className="portfolio-card"
-    onMouseOver={this.mouseOver}
-    onMouseOut={this.mouseOut} >
-    <h2 className="portfolio-card-text">{text}</h2>
-    <img className="portfolio-card-img" src={imageUrl} role="presentation" />
-  </div>
-);
+  }
+
+  renderImage() {
+    return (
+      <img
+        className="portfolio-card-img"
+        role="presentation"
+        src={this.props.imageUrl}
+      />
+    );
+  }
+
+  renderText() {
+    return (
+      <h2 className="portfolio-card-text">
+        {this.props.text}
+      </h2>
+    );
+  }
+
+  render() {
+    return (
+      <div
+        className="portfolio-card"
+        onMouseOver={this.mouseOver}
+        onMouseOut={this.mouseOut}
+      >
+        {this.state.hover ? this.renderText() : this.renderImage()}
+      </div>
+    );
+  }
+}
 
 PortfolioCard.propTypes = {
   linkUrl: PropTypes.string.isRequired,
