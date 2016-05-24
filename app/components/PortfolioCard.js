@@ -2,8 +2,27 @@ import React, { PropTypes } from 'react';
 import './PortfolioCard.scss';
 
 const PortfolioCard = ({ imageUrl, text, linkUrl }) => (
-  <div className="portfolio-card">
-    <h2 className="portfolio-card-text">{text}{linkUrl}</h2>
+  getInitialState: () => {
+      hover: false
+    },
+
+  mouseOver: () => {
+    this.setState({
+      hover: true
+      text: "I flipped"
+    });
+  },
+
+  mouseOut: () => {
+    this.setState({
+      hover:false
+      text: "I unflipped"
+    });
+  },
+  <div className="portfolio-card"
+    onMouseOver={this.mouseOver}
+    onMouseOut={this.mouseOut} >
+    <h2 className="portfolio-card-text">{text}</h2>
     <img className="portfolio-card-img" src={imageUrl} role="presentation" />
   </div>
 );

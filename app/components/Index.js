@@ -4,7 +4,7 @@ import PortfolioCard from './PortfolioCard';
 
 export default () => (
   <div className="index">
-    Index
+    <h3>Porfolio Card component made with React.js.</h3>
     <PortfolioCard />,
   </div>
 );
