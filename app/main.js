@@ -1,9 +1,9 @@
 import { Router, browserHistory } from 'react-router';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import routes from './routes';
+import PortfolioCard from './components/PortfolioCard.jsx';
 
 ReactDOM.render(
-  <Router children={routes} history={browserHistory} />,
+  <PortfolioCard />,
   document.getElementById('root')
 );
