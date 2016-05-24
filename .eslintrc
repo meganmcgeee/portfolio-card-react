@@ -1,0 +1,23 @@
+---
+parser: babel-eslint
+
+extends: [eslint-config-airbnb, plugin:lodash-fp/recommended]
+
+plugins:
+  - react
+  - flowtype
+  - lodash-fp
+
+globals:
+  __DEBUG_SERVER_ERRORS__: true
+  __SERVER_ERRORS__: true
+
+env:
+  browser: true
+  node: true
+  mocha: true
+
+rules:
+  ### Functions
+  func-names: 0
+  space-before-function-paren: 0
